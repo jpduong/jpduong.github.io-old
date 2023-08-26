@@ -1,8 +1,8 @@
-import { Footer } from "@/app/components/footer";
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import { MY_NAME } from "./constants";
 import { Providers } from "./providers";
+import { GoogleAnalytics } from "./components/GoogleAnalytics";
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -22,10 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ibmPlexMono.className}>
-        <Providers>
-          {children}
-          {/* <Footer /> */}
-        </Providers>
+        <GoogleAnalytics />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
