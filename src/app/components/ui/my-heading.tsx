@@ -6,7 +6,7 @@ interface Props extends ContainerProps {
 
 export const MyHeading = ({ text }: Props) => {
   return (
-    <Heading fontWeight={"bold"} mb={6}>
+    <Heading fontWeight={"bold"} mb={4}>
       {text}
     </Heading>
   );

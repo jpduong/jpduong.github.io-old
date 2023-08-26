@@ -8,7 +8,7 @@ import { MyHeading } from "./components/ui/my-heading";
 import { MyLink } from "./components/ui/my-link";
 import { COLOR_ACTION, LINK_INSTAGRAM, PROJECTS } from "./constants";
 
-const MB_CONTENT = 20;
+const MB_CONTENT = 6;
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -18,8 +18,8 @@ export default function Home() {
       <MyContainer
         border="1px solid white"
         my={{ base: 4 }}
-        px={{ base: 10, md: 20 }}
-        py={{ base: 10, md: 10 }}
+        px={{ base: 10 }}
+        py={{ base: 10 }}
         shadow="md"
         boxShadow={
           colorMode === "dark"
