@@ -3,57 +3,49 @@
 import { Footer } from "@/app/components/footer";
 import { Navbar } from "@/app/components/navbar";
 import { MyContainer } from "@/app/components/ui/my-container";
-import {
-  Heading,
-  ListItem,
-  Text,
-  UnorderedList,
-  useColorMode,
-} from "@chakra-ui/react";
+import { ListItem, Text, UnorderedList, useColorMode } from "@chakra-ui/react";
+import { MyHeading } from "./components/ui/my-heading";
 import { MyLink } from "./components/ui/my-link";
-import {
-  COLOR_ACTION,
-  LINK_INSTAGRAM,
-  LINK_THE_AFTER_PROJECT,
-} from "./constants";
+import { LINK_INSTAGRAM, PROJECTS } from "./constants";
+
+const MB_CONTENT = 20;
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   return (
     <main>
       <MyContainer
         border="1px solid white"
+        mt={{ base: 0, md: 20 }}
         px={{ base: 10, md: 20 }}
-        py={{ base: 5, md: 10 }}
+        py={{ base: 10, md: 20 }}
         shadow="md"
         boxShadow={
           colorMode === "dark"
             ? "0px 4px 10px rgba(255, 255, 255, 0.2)"
             : undefined
         }
-        borderRadius="sm"
+        borderRadius="md"
       >
         <Navbar />
-        <Heading fontWeight={"bold"} mb={6}>
-          About
-        </Heading>
-        <Text mb={12}>
+        <MyHeading text="About" />
+        <Text mb={MB_CONTENT}>
           Hi, I&apos;ve been working as a web developer since 2018. I enjoy
-          learning and collaborating with others.
+          learning new things and collaborating with others.
         </Text>
-        <Heading fontWeight={"bold"} mb={6}>
-          Projects
-        </Heading>
-        <UnorderedList mb={12}>
-          <MyLink href={LINK_THE_AFTER_PROJECT}>
-            <ListItem>The After Project</ListItem>
-          </MyLink>
+        <MyHeading text="Projects" />
+        <UnorderedList mb={MB_CONTENT}>
+          {PROJECTS.map(({ name, href, description }) => (
+            <MyLink key={name} href={href}>
+              <ListItem>
+                {name} ({description})
+              </ListItem>
+            </MyLink>
+          ))}
         </UnorderedList>
-        <Heading fontWeight={"bold"} mb={6}>
-          Services
-        </Heading>
-        <Text mb={12}>
+        <MyHeading text="Services" />
+        <Text mb={MB_CONTENT}>
           In my spare time, I enjoy working with small business owners and
           helping them set up their business and website. You can contact me
           <MyLink href={LINK_INSTAGRAM}>
