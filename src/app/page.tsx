@@ -6,7 +6,7 @@ import { MyContainer } from "@/app/components/ui/my-container";
 import { ListItem, Text, UnorderedList, useColorMode } from "@chakra-ui/react";
 import { MyHeading } from "./components/ui/my-heading";
 import { MyLink } from "./components/ui/my-link";
-import { LINK_INSTAGRAM, PROJECTS } from "./constants";
+import { COLOR_ACTION, LINK_INSTAGRAM, PROJECTS } from "./constants";
 
 const MB_CONTENT = 20;
 
@@ -31,8 +31,8 @@ export default function Home() {
         <Navbar />
         <MyHeading text="About" />
         <Text mb={MB_CONTENT}>
-          Hi, I&apos;ve been working as a web developer since 2018. I enjoy
-          learning new things and collaborating with others.
+          Hi, I&apos;ve been working professionally as a web developer since
+          2018. I enjoy learning new things and collaborating with others.
         </Text>
         <MyHeading text="Projects" />
         <UnorderedList mb={MB_CONTENT}>
@@ -49,7 +49,10 @@ export default function Home() {
           In my spare time, I enjoy working with small business owners and
           helping them set up their business and website. You can contact me
           <MyLink href={LINK_INSTAGRAM}>
-            <Text as={"span"}> here.</Text>
+            <Text as={"span"} _hover={{ color: COLOR_ACTION }}>
+              {" "}
+              here.
+            </Text>
           </MyLink>
         </Text>
         <Footer />
