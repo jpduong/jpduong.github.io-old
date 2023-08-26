@@ -7,8 +7,8 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { MY_NAME } from "../constants";
 import { BiSolidMoon, BiSolidSun } from "react-icons/bi";
+import { MY_NAME } from "../constants";
 
 export const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -22,7 +22,13 @@ export const Navbar = () => {
       justify="space-between"
     >
       <HStack gap={6}>
-        <Avatar src="/me.png" name={MY_NAME} ignoreFallback size="lg" />
+        <Avatar
+          colorScheme="whiteAlpha"
+          src="/me.png"
+          bg={"black"}
+          name={MY_NAME}
+          size="lg"
+        />
         <Text fontWeight="extrabold" fontSize="3xl">
           {MY_NAME}
         </Text>

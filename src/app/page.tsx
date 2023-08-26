@@ -17,9 +17,9 @@ export default function Home() {
     <main>
       <MyContainer
         border="1px solid white"
-        mt={{ base: 0, md: 20 }}
+        my={{ base: 4 }}
         px={{ base: 10, md: 20 }}
-        py={{ base: 10, md: 20 }}
+        py={{ base: 10, md: 10 }}
         shadow="md"
         boxShadow={
           colorMode === "dark"
